@@ -1,0 +1,19 @@
+声明：这边说的配置文件都是generator.xml
+     自行生成注释的@mbggenerated，千万不要删
+
+1.配置数据源，这没什么好说的，不要问我怎么配置
+<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@10.2.40.22:1522:orcl"userId="xxxx" password="xxxxx"></jdbcConnection>
+
+2.一般来说其他的配置不要需要动，要修改生成路径，请看xml的注释；如果默认的配置满足不了你的要求，请自己看文档
+http://www.mybatis.org/generator/configreference/generatedKey.html  官方文档
+http://blog.csdn.net/isea533/article/details/42102297               中国人写的比较好的文档说明
+
+3.配置自动生成的table相关的操作类,全是false的你也可以放开，看下生成的是什么，一般来说false就可以了，可以配置多个table，再写一个table标签就行
+ <table tableName="表名1"  enableUpdateByExample="false"  enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
+<table tableName="表名2"  enableUpdateByExample="false"  enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
+
+4.运行 run.bat
+
+

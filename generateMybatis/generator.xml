@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="ojdbc6-11.2.0.2.0.jar"/>
+    <context id="default" targetRuntime="MyBatis3" defaultModelType="flat">
+        <commentGenerator>
+            <property name="suppressDate" value="false" />
+			<!-- È¡Ïû×¢ÊÍ -->
+			<property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@cqcskj.wicp.net:1521:orcl"
+                        userId="net_gat" password="net_gat">
+        </jdbcConnection>
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.entity" targetProject="src">
+            <property name="constructorBased" value="false"/>
+
+            <property name="enableSubPackages" value="false"/>
+
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.xml" targetProject="resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.mapper" targetProject="src" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <table tableName="cs_loginlog"  
+				enableSelectByPrimaryKey="true" 
+				enableUpdateByPrimaryKey="true"
+				enableDeleteByPrimaryKey="true" 
+				enableUpdateByExample="false"  
+				enableCountByExample="false"
+                enableDeleteByExample="false" 
+				enableSelectByExample="false" 
+				selectByExampleQueryId="false" >
+				
+        </table>
+    </context>
+</generatorConfiguration>

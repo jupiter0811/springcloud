@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.GatDtglQanqxcMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.GatDtglQanqxc" >
+    <id column="BM" property="bm" jdbcType="VARCHAR" />
+    <result column="QY_CODE" property="qyCode" jdbcType="VARCHAR" />
+    <result column="XUANCSJ" property="xuancsj" jdbcType="TIMESTAMP" />
+    <result column="XUANCZT" property="xuanczt" jdbcType="VARCHAR" />
+    <result column="XUANCDD" property="xuancdd" jdbcType="VARCHAR" />
+    <result column="XUANCNR" property="xuancnr" jdbcType="VARCHAR" />
+    <result column="CANJRY" property="canjry" jdbcType="VARCHAR" />
+    <result column="ISSHANGB" property="isshangb" jdbcType="DECIMAL" />
+    <result column="ISSHENH" property="isshenh" jdbcType="DECIMAL" />
+    <result column="ADDUSER" property="adduser" jdbcType="VARCHAR" />
+    <result column="ADDTIME" property="addtime" jdbcType="TIMESTAMP" />
+    <result column="EDITUSER" property="edituser" jdbcType="VARCHAR" />
+    <result column="EDITTIME" property="edittime" jdbcType="TIMESTAMP" />
+    <result column="ISDEL" property="isdel" jdbcType="DECIMAL" />
+    <result column="DELTIME" property="deltime" jdbcType="TIMESTAMP" />
+    <result column="BZ" property="bz" jdbcType="VARCHAR" />
+    <result column="CSBJ" property="csbj" jdbcType="DECIMAL" />
+    <result column="GXSJ" property="gxsj" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    BM, QY_CODE, XUANCSJ, XUANCZT, XUANCDD, XUANCNR, CANJRY, ISSHANGB, ISSHENH, ADDUSER, 
+    ADDTIME, EDITUSER, EDITTIME, ISDEL, DELTIME, BZ, CSBJ, GXSJ
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from GAT_DTGL_QANQXC
+    where BM = #{bm,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from GAT_DTGL_QANQXC
+    where BM = #{bm,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.entity.GatDtglQanqxc" >
+    insert into GAT_DTGL_QANQXC (BM, QY_CODE, XUANCSJ, 
+      XUANCZT, XUANCDD, XUANCNR, 
+      CANJRY, ISSHANGB, ISSHENH, 
+      ADDUSER, ADDTIME, EDITUSER, 
+      EDITTIME, ISDEL, DELTIME, 
+      BZ, CSBJ, GXSJ)
+    values (#{bm,jdbcType=VARCHAR}, #{qyCode,jdbcType=VARCHAR}, #{xuancsj,jdbcType=TIMESTAMP}, 
+      #{xuanczt,jdbcType=VARCHAR}, #{xuancdd,jdbcType=VARCHAR}, #{xuancnr,jdbcType=VARCHAR}, 
+      #{canjry,jdbcType=VARCHAR}, #{isshangb,jdbcType=DECIMAL}, #{isshenh,jdbcType=DECIMAL}, 
+      #{adduser,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}, #{edituser,jdbcType=VARCHAR}, 
+      #{edittime,jdbcType=TIMESTAMP}, #{isdel,jdbcType=DECIMAL}, #{deltime,jdbcType=TIMESTAMP}, 
+      #{bz,jdbcType=VARCHAR}, #{csbj,jdbcType=DECIMAL}, #{gxsj,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.GatDtglQanqxc" >
+    insert into GAT_DTGL_QANQXC
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bm != null" >
+        BM,
+      </if>
+      <if test="qyCode != null" >
+        QY_CODE,
+      </if>
+      <if test="xuancsj != null" >
+        XUANCSJ,
+      </if>
+      <if test="xuanczt != null" >
+        XUANCZT,
+      </if>
+      <if test="xuancdd != null" >
+        XUANCDD,
+      </if>
+      <if test="xuancnr != null" >
+        XUANCNR,
+      </if>
+      <if test="canjry != null" >
+        CANJRY,
+      </if>
+      <if test="isshangb != null" >
+        ISSHANGB,
+      </if>
+      <if test="isshenh != null" >
+        ISSHENH,
+      </if>
+      <if test="adduser != null" >
+        ADDUSER,
+      </if>
+      <if test="addtime != null" >
+        ADDTIME,
+      </if>
+      <if test="edituser != null" >
+        EDITUSER,
+      </if>
+      <if test="edittime != null" >
+        EDITTIME,
+      </if>
+      <if test="isdel != null" >
+        ISDEL,
+      </if>
+      <if test="deltime != null" >
+        DELTIME,
+      </if>
+      <if test="bz != null" >
+        BZ,
+      </if>
+      <if test="csbj != null" >
+        CSBJ,
+      </if>
+      <if test="gxsj != null" >
+        GXSJ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bm != null" >
+        #{bm,jdbcType=VARCHAR},
+      </if>
+      <if test="qyCode != null" >
+        #{qyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="xuancsj != null" >
+        #{xuancsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xuanczt != null" >
+        #{xuanczt,jdbcType=VARCHAR},
+      </if>
+      <if test="xuancdd != null" >
+        #{xuancdd,jdbcType=VARCHAR},
+      </if>
+      <if test="xuancnr != null" >
+        #{xuancnr,jdbcType=VARCHAR},
+      </if>
+      <if test="canjry != null" >
+        #{canjry,jdbcType=VARCHAR},
+      </if>
+      <if test="isshangb != null" >
+        #{isshangb,jdbcType=DECIMAL},
+      </if>
+      <if test="isshenh != null" >
+        #{isshenh,jdbcType=DECIMAL},
+      </if>
+      <if test="adduser != null" >
+        #{adduser,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edituser != null" >
+        #{edituser,jdbcType=VARCHAR},
+      </if>
+      <if test="edittime != null" >
+        #{edittime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isdel != null" >
+        #{isdel,jdbcType=DECIMAL},
+      </if>
+      <if test="deltime != null" >
+        #{deltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bz != null" >
+        #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="csbj != null" >
+        #{csbj,jdbcType=DECIMAL},
+      </if>
+      <if test="gxsj != null" >
+        #{gxsj,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.GatDtglQanqxc" >
+    update GAT_DTGL_QANQXC
+    <set >
+      <if test="qyCode != null" >
+        QY_CODE = #{qyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="xuancsj != null" >
+        XUANCSJ = #{xuancsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="xuanczt != null" >
+        XUANCZT = #{xuanczt,jdbcType=VARCHAR},
+      </if>
+      <if test="xuancdd != null" >
+        XUANCDD = #{xuancdd,jdbcType=VARCHAR},
+      </if>
+      <if test="xuancnr != null" >
+        XUANCNR = #{xuancnr,jdbcType=VARCHAR},
+      </if>
+      <if test="canjry != null" >
+        CANJRY = #{canjry,jdbcType=VARCHAR},
+      </if>
+      <if test="isshangb != null" >
+        ISSHANGB = #{isshangb,jdbcType=DECIMAL},
+      </if>
+      <if test="isshenh != null" >
+        ISSHENH = #{isshenh,jdbcType=DECIMAL},
+      </if>
+      <if test="adduser != null" >
+        ADDUSER = #{adduser,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        ADDTIME = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edituser != null" >
+        EDITUSER = #{edituser,jdbcType=VARCHAR},
+      </if>
+      <if test="edittime != null" >
+        EDITTIME = #{edittime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isdel != null" >
+        ISDEL = #{isdel,jdbcType=DECIMAL},
+      </if>
+      <if test="deltime != null" >
+        DELTIME = #{deltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bz != null" >
+        BZ = #{bz,jdbcType=VARCHAR},
+      </if>
+      <if test="csbj != null" >
+        CSBJ = #{csbj,jdbcType=DECIMAL},
+      </if>
+      <if test="gxsj != null" >
+        GXSJ = #{gxsj,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where BM = #{bm,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.GatDtglQanqxc" >
+    update GAT_DTGL_QANQXC
+    set QY_CODE = #{qyCode,jdbcType=VARCHAR},
+      XUANCSJ = #{xuancsj,jdbcType=TIMESTAMP},
+      XUANCZT = #{xuanczt,jdbcType=VARCHAR},
+      XUANCDD = #{xuancdd,jdbcType=VARCHAR},
+      XUANCNR = #{xuancnr,jdbcType=VARCHAR},
+      CANJRY = #{canjry,jdbcType=VARCHAR},
+      ISSHANGB = #{isshangb,jdbcType=DECIMAL},
+      ISSHENH = #{isshenh,jdbcType=DECIMAL},
+      ADDUSER = #{adduser,jdbcType=VARCHAR},
+      ADDTIME = #{addtime,jdbcType=TIMESTAMP},
+      EDITUSER = #{edituser,jdbcType=VARCHAR},
+      EDITTIME = #{edittime,jdbcType=TIMESTAMP},
+      ISDEL = #{isdel,jdbcType=DECIMAL},
+      DELTIME = #{deltime,jdbcType=TIMESTAMP},
+      BZ = #{bz,jdbcType=VARCHAR},
+      CSBJ = #{csbj,jdbcType=DECIMAL},
+      GXSJ = #{gxsj,jdbcType=TIMESTAMP}
+    where BM = #{bm,jdbcType=VARCHAR}
+  </update>
+</mapper>
